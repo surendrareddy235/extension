@@ -5,7 +5,7 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 import os
 from dotenv import load_dotenv
-load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -13,7 +13,7 @@ CORS(app)  # Enable CORS for all routes
 llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
     temperature=0.3,
-    google_api_key="YOUR_API_KEY"
+    google_api_key=os.getenv("GOOGLE_API_KEY")
 )
 
 prompt_template = """[SYSTEM PROMPT]
