@@ -13,6 +13,7 @@ CORS(app)  # Enable CORS for all routes
 llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
     temperature=0.3,
+    google_api_key="YOUR_API_KEY"
 )
 
 prompt_template = """[SYSTEM PROMPT]
